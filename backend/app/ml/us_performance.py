@@ -4,9 +4,14 @@ from pathlib import Path
 import json
 
 import joblib
-import matplotlib.pyplot as plt
+import matplotlib
 import numpy as np
 import pandas as pd
+
+# Figure generation also runs from the API-triggered training path; keep it
+# headless and thread-safe rather than trying to open a Tk desktop window.
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
 from sklearn.compose import ColumnTransformer
 from sklearn.dummy import DummyClassifier, DummyRegressor
 from sklearn.ensemble import (

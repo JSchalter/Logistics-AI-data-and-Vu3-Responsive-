@@ -5,8 +5,13 @@ from pathlib import Path
 from typing import Iterable
 
 import joblib
+import matplotlib
 import numpy as np
 import pandas as pd
+
+# Training can be invoked by a FastAPI worker thread.  Use a file-only backend
+# so figure generation never initializes Tk or another desktop GUI backend.
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from sklearn.base import clone
 from sklearn.compose import ColumnTransformer

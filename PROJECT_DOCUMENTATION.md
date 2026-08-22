@@ -282,6 +282,7 @@ The following map documents the important executable blocks. Line numbers refer 
 | `backend/app/ml/training.py:57-74` | Writes unified data and retrieval metadata for the simple retrieval-only training path. |
 | `backend/app/ml/training.py:76-99` | `retrieve`; loads TF-IDF artifacts, performs cosine similarity, and returns only approved evidence fields plus scores. |
 | `backend/app/ml/source_training.py:112-137` | Builds preprocessing pipelines: median imputation/scaling for numeric inputs and imputation/one-hot encoding for categoricals. |
+| `backend/app/ml/source_training.py:7-15` and `backend/app/ml/us_performance.py:6-14` | Forces Matplotlib's file-only `Agg` backend before importing pyplot, so API-triggered training can write figures safely without opening a Tk GUI from a worker thread. |
 | `backend/app/ml/source_training.py:139-166` | Produces classification and regression governance metrics. |
 | `backend/app/ml/source_training.py:167-273` | Benchmarks dummy, logistic, random-forest, and extra-trees classifiers; persists the selected research artifact and computes classification deployment approval. |
 | `backend/app/ml/source_training.py:274-351` | Benchmarks dummy, ridge, random-forest, and extra-trees regressors; requires MAE improvement and R² before deployment approval. |
@@ -355,6 +356,7 @@ The following map documents the important executable blocks. Line numbers refer 
 | `WinError 10061` from `build_ollama_index.py` | Ollama is not listening. Start `ollama serve`, then retry. |
 | Ollama port already in use | The server is already running. Do not start a second instance. |
 | `numpy._core.numeric` missing | A global/old NumPy is being used. Run through `.venv\\Scripts\\python.exe` and reinstall requirements. |
+| Tk/`main thread is not in main loop` messages during `/train` | The current source forces the headless Matplotlib `Agg` backend. Restart the reload server after pulling the fix, then rerun training. |
 | `ModuleNotFoundError: fastapi` | Dependencies were installed into the wrong interpreter or installation failed. Run `.\.venv\Scripts\python.exe -m pip install -r requirements.txt`. |
 | `semantic_index_ready` is false | Run `.\.venv\Scripts\python.exe scripts\build_ollama_index.py`; it performs a fast model validation. |
 | First Ask Logistics call is slow | Local qwen and Gemma must load into memory. Subsequent requests are normally faster while models remain loaded. |
