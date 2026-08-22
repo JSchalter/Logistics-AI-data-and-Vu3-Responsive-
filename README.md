@@ -109,6 +109,8 @@ It can answer questions grounded in the retrieved historical records, such as:
 
 The response includes evidence rows so the answer can be reviewed. It will state when the available historical evidence is insufficient.
 
+For a copy-ready prompt library, see [ASK_LOGISTICS_EXAMPLE_QUESTIONS.txt](ASK_LOGISTICS_EXAMPLE_QUESTIONS.txt).
+
 ### Does Ask Logistics use live traffic, GPS, weather, prices, or carrier feeds?
 
 No. It is a historical, dataset-grounded capability. It does not claim live operational conditions or real-time routing information.

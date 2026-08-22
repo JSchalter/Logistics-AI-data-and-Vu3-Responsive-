@@ -1,0 +1,112 @@
+ASK LOGISTICS — EXAMPLE QUESTIONS
+==================================
+
+These questions are designed for the Ask Logistics panel. Answers are grounded
+only in retrieved historical records. The application does not claim live GPS,
+traffic, weather, pricing, carrier-feed, or routing information.
+
+
+GENERAL EXPLORATION
+-------------------
+- What patterns appear in the most relevant logistics records?
+- Summarize the most relevant shipment evidence for this question.
+- Which source datasets are represented in the retrieved evidence?
+- What lanes are most common in the relevant records?
+- What shipment statuses appear most frequently in the retrieved evidence?
+- Which fields in the evidence are most useful for understanding this question?
+
+
+DELAYS AND SERVICE PERFORMANCE
+------------------------------
+- What delay patterns appear in shipments similar to this one?
+- What is the average and median delay in the most relevant records?
+- Which relevant records show the largest delay hours?
+- Are delayed shipments concentrated on particular lanes in the evidence?
+- What do the relevant records suggest about planned ETA versus actual delay?
+- Which carriers appear most often among the retrieved delayed shipments?
+- Are there signs of repeated delay patterns in the relevant route records?
+- Summarize the delay-risk and service-deviation context in the retrieved data.
+- What is the relationship between traffic level and delay in the relevant records?
+- What is the relationship between weather severity and delay in the relevant records?
+
+
+CARRIER COMPARISON
+------------------
+- Compare carrier cost, transit time, and delay patterns in the relevant shipments.
+- Which carriers are most represented in the retrieved evidence?
+- How do the relevant carriers compare on observed shipping cost?
+- How do the relevant carriers compare on observed transit days?
+- Which carrier records show the strongest on-time or delayed pattern in this evidence?
+- What historical carrier reliability context is available in the relevant records?
+- Are some carriers associated with more exception statuses in the retrieved data?
+- Compare UPS, FedEx, DHL, USPS, OnTrac, and other carriers represented in the evidence.
+
+
+COST AND TRANSIT
+----------------
+- What shipping-cost range appears in the most relevant records?
+- What is the average and median shipping cost in the relevant evidence?
+- What transit-day range appears for similar shipments?
+- Which lanes have the highest observed cost in the retrieved data?
+- Which relevant records have the shortest observed transit time?
+- Which relevant records have the longest observed transit time?
+- Is there an apparent relationship between distance and shipping cost in these records?
+- Is there an apparent relationship between distance and transit days in these records?
+- Compare cost-per-shipment patterns for the relevant carriers or lanes.
+
+
+ROUTES, LANES, AND NETWORK CONTEXT
+----------------------------------
+- Which origin-to-destination lanes are most common in the retrieved records?
+- What is the evidence for the MIA to Detroit lane?
+- What delay, cost, and transit patterns appear for this route?
+- Which routes have the highest route-risk scores in the relevant evidence?
+- Which records have high traffic or weather severity on similar lanes?
+- Are there recurring route identifiers in the retrieved records?
+- What origin and destination combinations appear most often in this evidence?
+- Summarize the operational context for shipments on this lane.
+
+
+RISK, DISRUPTION, AND OPERATIONS
+--------------------------------
+- What risk classes appear in the retrieved evidence?
+- What is the average route-risk score among the relevant records?
+- What disruption-likelihood values appear in similar shipments?
+- Which records have the highest disruption likelihood?
+- What operational factors are present in the highest-risk retrieved records?
+- What detention or dwell-time patterns appear in the relevant records?
+- Are there links between route risk, traffic level, and delay in this evidence?
+- What supplier-reliability context is available in the retrieved records?
+
+
+DATA QUALITY AND ANOMALIES
+--------------------------
+- Are there date-quality flags in the relevant records?
+- Do any retrieved records show transit-date mismatches?
+- Are missing cost or missing delivery-date issues represented in this evidence?
+- Which evidence rows need manual data-quality review?
+- Are there extreme cost values in the most relevant records?
+- What fields are missing or incomplete in the retrieved evidence?
+
+
+EVIDENCE-FOCUSED FOLLOW-UPS
+---------------------------
+- Cite the record IDs that support your answer.
+- What can be concluded from the evidence, and what cannot?
+- Is the retrieved evidence sufficient to answer this question?
+- Which two records best illustrate the observed pattern?
+- Summarize only the facts present in the returned evidence rows.
+- Do not assume live conditions; explain the historical pattern only.
+
+
+PREDICTION QUESTIONS — USE THE DEDICATED PANELS
+------------------------------------------------
+For a new shipment prediction, use the Tracking Intelligence or Carrier
+Recommendation panels rather than Ask Logistics. Those panels call the
+validated sklearn models and return governed predictive outputs.
+
+- Will this shipment be delayed? Use Tracking Intelligence.
+- What is the predicted delay probability or delay hours? Use Tracking Intelligence.
+- What will this US shipment cost? Use Carrier Recommendation or the US API.
+- How many days will this US shipment take? Use Carrier Recommendation or the US API.
+- Which carrier should I choose for cheapest, fastest, reliable, or balanced? Use Carrier Recommendation.
