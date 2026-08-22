@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+frontend/dist/
+data/raw/
+data/processed/
+data/demo/
+artifacts/
+validation/demo_artifacts/
+.env
+
+# Local release archives and superseded patch bundles
+Logistics_AI_V*.zip
+Logistics_AI_V*.sha256
+Logistics_AI_V*/
+Logistics_AI_Intelligence_Platform.sha256
+INSTALL_V*.txt
